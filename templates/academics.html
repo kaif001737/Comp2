@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+
+{% block title %}Academics - St. Antony's Girls Hr Sec School (Govt Aided){% endblock %}
+
+{% block content %}
+<section class="page-banner page-banner-hero" style="background-image: url('{{ url_for('static', filename=page_banners['academics']) }}');">
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+        <h1>Academic Programs</h1>
+        <div class="breadcrumbs">
+            <a href="{{ url_for('index') }}">Home</a>
+            <span class="separator"></span>
+            <span class="current">Academics</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container academics-intro">
+        <div class="academics-intro-text slide-up">
+            <h3>Intellectual Rigor & Holistic Growth</h3>
+            <p>At St. Antony’s, we follow the Tamil Nadu State Board curriculum (Samacheer Kalvi) for classes VI to XII. Our primary goal is to foster an environment of conceptual clarity, scientific reasoning, and analytical thinking. We ensure that our students do not just memorize facts, but deeply understand the application of knowledge.</p>
+            <p>Our classroom experience is enhanced by modern smart-boards, digital labs, and individual attention. With a low student-to-teacher ratio, our educators are able to support and challenge each student, ensuring that every girl achieves her potential.</p>
+            <p>We place high emphasis on regular assessments, remedial coaching for students needing extra support, and specialized training programs for competitive entrance exams.</p>
+        </div>
+        <div class="slide-up delay-2">
+            <img src="{{ url_for('static', filename='images/infra/infra-3.jpeg') }}" alt="Students engaged in chemistry laboratory practical" class="academics-intro-img">
+        </div>
+    </div>
+</section>
+
+<section id="curriculum" class="section section-cream">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Course Curricula & Streams</h2>
+            <p>Structured learning pathways designed for primary, secondary, and higher secondary sections</p>
+        </div>
+
+        <div class="programs-grid">
+            <!-- Secondary Section -->
+            <div id="secondary" class="program-card slide-up">
+                <div class="program-header">
+                    <h3>Secondary Education</h3>
+                    <span class="badge">Grades VI - X</span>
+                </div>
+                <div class="program-body">
+                    <p>Focuses on establishing strong fundamentals in core subjects. Prepare students for the secondary school leaving certificate examinations (SSLC).</p>
+
+                    <h4>Core Languages</h4>
+                    <ul>
+                        <li>Language I: English (Communicative & Literature)</li>
+                        <li>Language II: Tamil</li>
+                    </ul>
+
+                    <h4>Core Subjects</h4>
+                    <ul>
+                        <li>Mathematics (Algebra, Geometry, Arithmetic)</li>
+                        <li>Science (Physics, Chemistry, Biology with Lab Practical sessions)</li>
+                        <li>Social Science (History, Civics, Geography, Economics)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Higher Secondary Section -->
+            <div id="higher-secondary" class="program-card slide-up delay-2">
+                <div class="program-header">
+                    <h3>Higher Secondary</h3>
+                    <span class="badge">Grades XI - XII</span>
+                </div>
+                <div class="program-body">
+                    <p>Specialized streams preparing young girls for college and professional careers. Heavy emphasis on practical, hands-on lab sessions.</p>
+
+                    <h4>Language Options</h4>
+                    <ul>
+                        <li>Part I: Tamil</li>
+                        <li>Part II: English</li>
+                    </ul>
+
+                    <h4>Major Stream Selections</h4>
+                    <p style="font-size: 0.9rem; font-style: italic; color: var(--color-gray); margin-bottom: 1rem;">Students must select one of the core academic streams listed below.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Streams Detailed Cards -->
+        <div class="streams-grid">
+            <!-- Stream 1 -->
+            <div class="stream-card slide-up delay-1">
+                <div class="stream-icon"><i class="fa-solid fa-flask"></i></div>
+                <h4>Science (Group A)</h4>
+                <p class="stream-subjects">Physics, Chemistry, Biology, Mathematics</p>
+            </div>
+
+            <!-- Stream 2 -->
+            <div class="stream-card slide-up delay-2">
+                <div class="stream-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                <h4>Science (Group B)</h4>
+                <p class="stream-subjects">Physics, Chemistry, Computer Science, Mathematics</p>
+            </div>
+
+            <!-- Stream 3 -->
+            <div class="stream-card slide-up delay-3">
+                <div class="stream-icon"><i class="fa-solid fa-calculator"></i></div>
+                <h4>Commerce Group</h4>
+                <p class="stream-subjects">Commerce, Accountancy, Economics, Computer Applications / Business Mathematics</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="co-curricular" class="section">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Beyond the Classroom</h2>
+            <p>Cultivating leadership, creativity, and fitness through vibrant co-curricular clubs</p>
+        </div>
+
+        <div class="activities-grid">
+            <!-- Activity 1: Sports & Athletics (34.png) -->
+            <div class="activity-card slide-up delay-1">
+                <div class="activity-img-wrapper">
+                    <img src="{{ url_for('static', filename='images/infra/34.png') }}" alt="St. Antony's School sports and athletics volleyball team" class="activity-img">
+                </div>
+                <div class="activity-info">
+                    <h4>Sports & Athletics</h4>
+                    <p>Our students participate and secure medals in State and Zonal Level Athletics, Basketball, and Volleyball tournaments. Physical training and fitness are integral parts of our school life.</p>
+                </div>
+            </div>
+
+            <!-- Activity 2: Cultural & Fine Arts (36.png) -->
+            <div class="activity-card slide-up delay-2">
+                <div class="activity-img-wrapper">
+                    <img src="{{ url_for('static', filename='images/infra/36.png') }}" alt="Students performing expressive cultural dance and stage drama" class="activity-img">
+                </div>
+                <div class="activity-info">
+                    <h4>Cultural & Fine Arts</h4>
+                    <p>From classical Bharatanatyam to modern dance, theater, debating, and vocal music, our vibrant cultural events provide an inspiring stage for artistic expression and confidence.</p>
+                </div>
+            </div>
+
+            <!-- Activity 3: Clubs & Societies (35.png) -->
+            <div class="activity-card slide-up delay-3">
+                <div class="activity-img-wrapper">
+                    <img src="{{ url_for('static', filename='images/infra/35.png') }}" alt="Eco Club and students engaged in campus gardening and environmental care" class="activity-img">
+                </div>
+                <div class="activity-info">
+                    <h4>Clubs & Societies</h4>
+                    <p>Active student participation in the Eco Club (environmental stewardship & green campus), Interact Club (community service), Literary Circle, and Youth Red Cross to build character.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-cream">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Academic Roll of Honor</h2>
+            <p>Celebrating the students who brought laurels to the institution in the recent Board Examinations</p>
+        </div>
+
+        <div class="toppers-posters slide-up">
+            <figure class="toppers-poster-card">
+                <img src="{{ url_for('static', filename='images/toppers-hsc.jpeg') }}" alt="Higher Secondary Public Exam school toppers of St. Antony's Girls Hr. Sec. School" class="toppers-poster-img">
+                <figcaption>Higher Secondary Public Exam Toppers</figcaption>
+            </figure>
+            <figure class="toppers-poster-card delay-2">
+                <img src="{{ url_for('static', filename='images/toppers-sslc.jpeg') }}" alt="SSLC Exam school toppers of St. Antony's Girls Hr. Sec. School" class="toppers-poster-img">
+                <figcaption>SSLC Exam School Toppers</figcaption>
+            </figure>
+        </div>
+
+        <div class="toppers-table-wrapper slide-up">
+            <table class="toppers-table">
+                <thead>
+                    <tr>
+                        <th>Class / Exam</th>
+                        <th>Student Name</th>
+                        <th>Marks / Percent</th>
+                        <th>School Rank</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class XII Board Exam</td>
+                        <td class="topper-name">Ranjani V (XII E)</td>
+                        <td>590 / 600</td>
+                        <td><span class="topper-badge">School First</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class XII Board Exam</td>
+                        <td class="topper-name">Preetha T (XII E)</td>
+                        <td>587 / 600</td>
+                        <td><span class="topper-badge">School Second</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class XII Board Exam</td>
+                        <td class="topper-name">Sharon Hannah Berryman (XII E)</td>
+                        <td>582 / 600</td>
+                        <td><span class="topper-badge">School Third</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class X SSLC Exam</td>
+                        <td class="topper-name">Elisha R</td>
+                        <td>493 / 500</td>
+                        <td><span class="topper-badge">School First</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class X SSLC Exam</td>
+                        <td class="topper-name">Ashifa Banu D</td>
+                        <td>489 / 500</td>
+                        <td><span class="topper-badge">School Second</span></td>
+                    </tr>
+                    <tr>
+                        <td>Class X SSLC Exam</td>
+                        <td class="topper-name">Ashifa Banu S</td>
+                        <td>472 / 500</td>
+                        <td><span class="topper-badge">School Third</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

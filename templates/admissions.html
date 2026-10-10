@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+
+{% block title %}Admissions - St. Antony's Girls Hr Sec School (Govt Aided){% endblock %}
+
+{% block content %}
+<section class="page-banner page-banner-hero" style="background-image: url('{{ url_for('static', filename=page_banners['admissions']) }}');">
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+        <h1>Admissions Open</h1>
+        <div class="breadcrumbs">
+            <a href="{{ url_for('index') }}">Home</a>
+            <span class="separator"></span>
+            <span class="current">Admissions</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container admissions-grid">
+        <!-- Process Guide (Left) -->
+        <div class="slide-up">
+            <span class="principal-title" style="margin-bottom: 0.5rem; display: block;">Enrollment Process</span>
+            <h3 style="font-size: 2.2rem; margin-bottom: 2rem; color: var(--color-maroon-dark);">How to Join St. Antony's</h3>
+            <p style="margin-bottom: 2rem;">We strive to make our enrollment process transparent, simple, and straightforward for parents and candidates. Follow the structured steps below to submit your inquiry and confirm admission.</p>
+            
+            <!-- Accordion Steps -->
+            <div id="criteria" class="timeline-accordion">
+                <!-- Step 1 -->
+                <div class="accordion-item active">
+                    <div class="accordion-header">
+                        <div class="accordion-title-wrapper">
+                            <span class="accordion-number">1</span>
+                            <h4>Submit Online Inquiry</h4>
+                        </div>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Fill out the online admission inquiry form on this page with the required details. Our admissions counselor will review the details and reach out to you via email or phone within 48 business hours to schedule an interaction.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title-wrapper">
+                            <span class="accordion-number">2</span>
+                            <h4>Counseling & Interaction</h4>
+                        </div>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Parents and the candidate will visit the campus for a brief interaction with the Headmistress and class coordinators. This conversation helps us understand the student's interests, academic background, and expectations.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title-wrapper">
+                            <span class="accordion-number">3</span>
+                            <h4>Document Verification</h4>
+                        </div>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>After approval from the Headmistress, parents must submit physical copies of the required academic transcripts and personal identity documents at the school for official verification.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <div class="accordion-title-wrapper">
+                            <span class="accordion-number">4</span>
+                            <h4>Fee Payment & Enrollment</h4>
+                        </div>
+                        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Complete the payment of term fees at the school accounts desk to secure and finalize the student's seat. Welcome kits, uniforms guidelines, and academic calendars will be provided upon confirmation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documents Required Box -->
+            <div style="margin-top: 3.5rem; background-color: var(--color-cream); padding: 2rem; border-radius: var(--border-radius-lg); border: 1px solid rgba(212, 175, 55, 0.3);">
+                <h4 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--color-maroon-dark); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem;">
+                    <i class="fa-solid fa-file-invoice" style="color: var(--color-maroon);"></i> Documents Required at Verification
+                </h4>
+                <ul class="program-body" style="list-style: none; margin: 0; padding: 0;">
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-sage); font-size: 0.9rem;"></i> Original Birth Certificate (with 2 photocopies)</li>
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-sage); font-size: 0.9rem;"></i> Transfer Certificate (TC) from the previous school</li>
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-sage); font-size: 0.9rem;"></i> Copy of Student Aadhaar Card</li>
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-sage); font-size: 0.9rem;"></i> Recent Passport Size Photographs (3 copies)</li>
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-circle-check" style="color: var(--color-sage); font-size: 0.9rem;"></i> Community Certificate (if applicable)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Inquiry Form (Right) -->
+        <div id="inquiry" class="slide-up delay-2">
+            <div class="inquiry-form-wrapper">
+                <h3>Admission Inquiry</h3>
+                <p>Submit the details below to begin the conversation regarding your daughter's future.</p>
+                
+                <div id="formFeedback" class="form-feedback"></div>
+                
+                <form id="admissionInquiryForm" action="/submit-inquiry" method="POST">
+                    <div class="form-group">
+                        <label for="studentName">Student's Full Name *</label>
+                        <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Enter student's name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="parentName">Parent / Guardian Name *</label>
+                        <input type="text" id="parentName" name="parentName" class="form-control" placeholder="Enter parent's name" required>
+                    </div>
+                    
+                    <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="email@address.com" required>
+                        </div>
+                        <div>
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="9876543210" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="grade">Grade / Class Requested *</label>
+                        <select id="grade" name="grade" class="form-control" required>
+                            <option value="" disabled selected>Select class</option>
+                            <option value="VI">Grade VI</option>
+                            <option value="VII">Grade VII</option>
+                            <option value="VIII">Grade VIII</option>
+                            <option value="IX">Grade IX</option>
+                            <option value="X">Grade X</option>
+                            <option value="XI-Science">Grade XI (Science Stream)</option>
+                            <option value="XI-Commerce">Grade XI (Commerce Stream)</option>
+                            <option value="XII-Science">Grade XII (Science Stream)</option>
+                            <option value="XII-Commerce">Grade XII (Commerce Stream)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Queries / Message</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Describe any specific queries, subject preferences, or academic history..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-maroon" style="width: 100%; margin-top: 1rem;">Submit Inquiry Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section section-cream">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Scholarships & Fee Policies</h2>
+            <p>Our commitment to making quality education accessible to every deserving student</p>
+        </div>
+        
+        <div style="background-color: var(--color-white); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-soft); padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+            <div class="slide-up">
+                <h4 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-maroon-dark); margin-bottom: 1.2rem;">Fee Structure Guidelines</h4>
+                <p>St. Antony's Girls Higher Secondary School operates as a partially-aided, non-profit academic institution. Our fee structure is audited and approved by the State Fee Committee to keep costs affordable while maintaining premium academic infrastructure.</p>
+                <p>Term fees are payable three times a year (June, October, and January). Textbooks, notebook packages, and school uniforms are separate items. Installment options are available upon written application to the school administration for families facing financial constraints.</p>
+            </div>
+            
+            <div class="slide-up delay-2">
+                <h4 style="font-family: var(--font-heading); font-size: 1.6rem; color: var(--color-maroon-dark); margin-bottom: 1.2rem;">Scholarships & Financial Aid</h4>
+                <p>We believe financial hardships should never stand in the way of a girl's education. We offer multiple scholarship models:</p>
+                <ul class="program-body" style="list-style: none; padding: 0;">
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-graduation-cap" style="color: var(--color-gold-dark); font-size: 0.9rem;"></i> <strong>Academic Topper Scholarship:</strong> 100% tuition fee waiver for class board exam toppers.</li>
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-medal" style="color: var(--color-gold-dark); font-size: 0.9rem;"></i> <strong>Sports Excellence Waiver:</strong> Sports council fee waivers for state and national competitors.</li>
+                    <li style="font-size: 0.95rem; margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.6rem;"><i class="fa-solid fa-hands-holding-hand" style="color: var(--color-gold-dark); font-size: 0.9rem;"></i> <strong>Need-Based Concessions:</strong> Dedicated trust funds providing aid to single-parent and low-income families.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

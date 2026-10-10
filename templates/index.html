@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - St. Antony's Girls Higher Secondary School{% endblock %}
+
+{% block content %}
+<!-- Premium Hero Slider Section -->
+<section class="hero-slider">
+    <!-- Slide 1 -->
+    <div class="hero-slide hero-slide-1 active">
+        <div class="hero-overlay"></div>
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="hero-content">
+                <span class="pre-title">Welcome to St. Antony's</span>
+                <h1>Empowering Women of Tomorrow</h1>
+                <p>A heritage of academic excellence, character building, and holistic education for girls in the heart of Chennai.</p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('about') }}" class="btn btn-primary" id="heroBtnAbout">Discover Our Legacy</a>
+                    <a href="{{ url_for('admissions') }}" class="btn btn-outline" id="heroBtnAdmissions">Admissions Open</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Slide 2 -->
+    <div class="hero-slide hero-slide-2">
+        <div class="hero-overlay"></div>
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="hero-content">
+                <span class="pre-title">Academic Excellence</span>
+                <h1>Where Curiosity Meets Opportunity</h1>
+                <p>Nurturing logical thinking, scientific inquiry, and global skillsets inside and outside the classroom.</p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('academics') }}" class="btn btn-primary">Our Programs</a>
+                    <a href="{{ url_for('gallery') }}" class="btn btn-outline">Explore Campus</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="hero-slide hero-slide-3">
+        <div class="hero-overlay"></div>
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="hero-content">
+                <span class="pre-title">Value-Based Education</span>
+                <h1>Integrity, Compassion, and Leadership</h1>
+                <p>Building character and instilling deep moral values to prepare girls for impactful global service.</p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('about') }}#vision-mission" class="btn btn-primary">Vision & Values</a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="hero-slide hero-slide-4">
+        <div class="hero-overlay"></div>
+        <div class="container" style="position: relative; z-index: 10;">
+            <div class="hero-content">
+                <span class="pre-title">Holistic Growth</span>
+                <h1>Nurturing Young Minds</h1>
+                <p>Providing a safe, playful, and interactive environment for foundational education and early childhood development.</p>
+                <div class="hero-actions">
+                    <a href="{{ url_for('academics') }}#co-curricular" class="btn btn-primary">Co-Curricular Activities</a>
+                    <a href="{{ url_for('admissions') }}" class="btn btn-outline">Apply Today</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Dots Indicators -->
+    <div class="hero-nav">
+        <span class="hero-dot active" data-index="0"></span>
+        <span class="hero-dot" data-index="1"></span>
+        <span class="hero-dot" data-index="2"></span>
+        <span class="hero-dot" data-index="3"></span>
+    </div>
+</section>
+
+<!-- Leadership Messages: Headmistress & Correspondent Sections -->
+<section class="section section-cream principal-welcome-section">
+    <div class="container welcome-grid">
+        <div class="welcome-text slide-up">
+            <div class="welcome-header">
+                <span class="principal-title">Message from the Headmistress</span>
+                <div class="accent-line"></div>
+            </div>
+            <h3>Cultivating Minds, Inspiring Hearts</h3>
+            <p>Welcome to St. Antony's Girls Hr. Sec. School. For over seven decades, our school has stood as a beacon of educational excellence in Chennai. We believe in providing an empowering environment where every young girl is encouraged to explore her potential, voice her ideas, and develop into a confident leader.</p>
+            <p>Our focus extends beyond classrooms; we blend classical moral foundations with modern scientific inquiry. Here, girls do not just receive degrees, they acquire character, build empathy, and establish friendships that last a lifetime.</p>
+            
+            <div class="quote-box">
+                <p>"We do not train students merely to pass public examinations, but to navigate the path of life with grace, knowledge, and courage."</p>
+            </div>
+            
+            <div class="principal-signature">
+                <span class="principal-signature-handwritten">Sr. Dr. Margaret Daisy</span>
+                <div class="principal-name">Sr. Dr. Margaret Daisy</div>
+                <div class="principal-title">Headmistress, St. Antony's Girls Hr. Sec. School</div>
+            </div>
+        </div>
+
+        <div class="welcome-image-wrapper fade-in">
+            <div class="decorative-dots"></div>
+            <img src="{{ url_for('static', filename='images/principal.jpeg') }}" alt="Sr. Dr. Margaret Daisy, Headmistress of St. Antony's School" class="welcome-img">
+        </div>
+    </div>
+</section>
+
+<!-- Correspondent Section -->
+<section class="section correspondent-section">
+    <div class="container welcome-grid welcome-grid-reverse">
+        <div class="welcome-image-wrapper fade-in">
+            <div class="decorative-dots"></div>
+            <img src="{{ url_for('static', filename='images/Staff/40.png') }}" alt="Rev. Sr. Elizabeth Rani, Correspondent of St. Antony's School" class="welcome-img correspondent-img">
+        </div>
+
+        <div class="welcome-text slide-up">
+            <div class="welcome-header">
+                <span class="principal-title">From the Correspondent's Desk</span>
+                <div class="accent-line"></div>
+            </div>
+            <h3>Guiding with Faith, Vision & Dedication</h3>
+            <p>At St. Antony's Girls Hr. Sec. School, our sacred calling is to nurture young girls into spiritually grounded, intellectually accomplished, and morally courageous citizens. Rooted in our Christian heritage and values of love, truth, and service, we are committed to providing accessible and high-quality education to all.</p>
+            <p>As a government-aided institution, we uphold the sacred trust of shaping future generations with dedicated teachers, modern facilities, and compassionate guidance. May St. Antony shower his blessings upon every child who enters our portal.</p>
+            
+            <div class="quote-box">
+                <p>"Guided by divine light and truth, every student here is empowered to serve society with wisdom, integrity, and grace."</p>
+            </div>
+            
+            <div class="principal-signature">
+                <span class="principal-signature-handwritten">Rev. Sr. Elizabeth Rani</span>
+                <div class="principal-name">Rev. Sr. Elizabeth Rani</div>
+                <div class="principal-title">Correspondent, St. Antony's Girls Hr. Sec. School</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Stats Counter Banner -->
+<section class="section section-cream-bg">
+    <div class="container stats-grid">
+        <div class="stat-card slide-up delay-1">
+            <span class="stat-number">125+</span>
+            <span class="stat-label">Years of Legacy</span>
+        </div>
+        <div class="stat-card slide-up delay-2">
+            <span class="stat-number">1500+</span>
+            <span class="stat-label">Active Students</span>
+        </div>
+        <div class="stat-card slide-up delay-3">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Board Exam Pass Rate</span>
+        </div>
+        <div class="stat-card slide-up delay-4">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Expert Faculty Members</span>
+        </div>
+    </div>
+</section>
+
+<!-- Why St. Antony's Section (Core Pillars) -->
+<section class="section">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Why Choose St. Antony's?</h2>
+            <p>Nurturing young minds in a safe, dynamic, and values-rich environment</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card slide-up delay-1">
+                <div class="feature-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Academic Eminence</h3>
+                <p>Consistently securing top ranks in Tamil Nadu Board Public Examinations with tailored, individual student monitoring and modern smart-class systems.</p>
+            </div>
+            
+            <div class="feature-card slide-up delay-2">
+                <div class="feature-icon"><i class="fa-solid fa-chess-queen"></i></div>
+                <h3>Feminine Leadership</h3>
+                <p>Curated leadership programs, clubs, and public speaking opportunities that empower young girls to speak boldly and take initiative in local and global arenas.</p>
+            </div>
+            
+            <div class="feature-card slide-up delay-3">
+                <div class="feature-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                <h3>Morals & Spirituality</h3>
+                <p>Guiding students to build a deep foundation of ethical integrity, compassion for the underprivileged, and social responsibility.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Latest News / Announcements Section (Upcoming Events removed as requested) -->
+<section class="section section-cream">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Happenings & Announcements</h2>
+            <p>Stay up to date with the latest official notices and academic updates from the campus</p>
+        </div>
+        
+        <div class="announcements-full-grid slide-up">
+            <div class="announcements-header-bar">
+                <h3><i class="fa-solid fa-bullhorn" style="margin-right: 0.6rem; color: var(--color-maroon);"></i>Official School Announcements</h3>
+            </div>
+            <div class="news-grid-cards">
+                {% for item in news %}
+                <div class="news-card">
+                    <span class="news-date"><i class="fa-regular fa-calendar" style="margin-right: 0.4rem;"></i>{{ item.date }}</span>
+                    <h4>{{ item.title }}</h4>
+                    <p>{{ item.summary }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="section cta-banner">
+    <div class="cta-overlay"></div>
+    <div class="container">
+        <h2>Shape the Future of Your Daughter</h2>
+        <p>Inquiries for admissions for classes VI to XI are open. Contact our school admissions team or fill out the online inquiry form today.</p>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="{{ url_for('admissions') }}" class="btn btn-primary">Begin Admission Process</a>
+            <a href="{{ url_for('contact') }}" class="btn btn-outline">Locate Our Campus</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

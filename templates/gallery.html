@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Media Gallery - St. Antony's Girls Hr Sec School (Govt Aided){% endblock %}
+
+{% block content %}
+<section class="page-banner page-banner-hero" style="background-image: url('{{ url_for('static', filename=page_banners['gallery']) }}');">
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+        <h1>Campus Life Gallery</h1>
+        <div class="breadcrumbs">
+            <a href="{{ url_for('index') }}">Home</a>
+            <span class="separator"></span>
+            <span class="current">Gallery</span>
+        </div>
+    </div>
+</section>
+
+<section class="section section-cream-bg gallery-section">
+    <div class="container">
+        <div class="gallery-intro slide-up">
+            <span class="principal-title">Our Moments</span>
+            <h2>Celebrating Life at St. Antony's</h2>
+            <p>Browse photos from campus events, academic milestones, and our learning facilities.</p>
+        </div>
+
+        <div class="gallery-filters slide-up">
+            {% for filter in gallery_filters %}
+            <button class="filter-btn{% if filter.id == 'all' %} active{% endif %}" data-filter="{{ filter.id }}" id="filter{{ filter.label | replace(' ', '') }}">
+                {{ filter.label }}
+            </button>
+            {% endfor %}
+        </div>
+
+        <div class="gallery-grid">
+            {% for photo in gallery_images %}
+            <article class="gallery-item gallery-item--{{ photo.layout }} slide-up delay-{{ ((loop.index0 % 3) + 1) }}" data-category="{{ photo.category }}" id="galleryItem{{ loop.index }}">
+                <img src="{{ url_for('static', filename=photo.file) }}" alt="{{ photo.alt }}" class="gallery-item-img" loading="lazy">
+                <div class="gallery-item-overlay">
+                    <span class="gallery-tag">{{ photo.tag }}</span>
+                    <h4 class="gallery-item-title">{{ photo.title }}</h4>
+                </div>
+                <span class="gallery-item-zoom" aria-hidden="true"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<div class="lightbox-modal" id="galleryLightbox" aria-hidden="true" role="dialog">
+    <div class="lightbox-content-wrapper">
+        <button class="lightbox-close" aria-label="Close Lightbox Modal">&times;</button>
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Gallery Lightbox Image" class="lightbox-img">
+        <div class="lightbox-caption"></div>
+    </div>
+</div>
+{% endblock %}

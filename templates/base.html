@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="{% block meta_description %}Official website of St. Antony's Girls Higher Secondary School, Chennai. Empowering girls through holistic education, academic excellence, and values since 1950.{% endblock %}">
+    <meta name="keywords" content="St. Antony's Girls School Chennai, Girls HSS Chennai, Girls School Chennai, St Antony's School, Admissions Chennai School">
+    <meta name="author" content="St. Antony's Girls Higher Secondary School">
+    
+    <title>{% block title %}St. Antony's Girls Hr Sec School (Govt Aided), Chennai{% endblock %}</title>
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Skip loader instantly if already shown this session -->
+    <script>
+        (function () {
+            try {
+                if (sessionStorage.getItem('stantony_site_opened') === 'true') {
+                    document.documentElement.classList.add('loader-seen');
+                }
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Site Loading Screen -->
+    <div id="siteLoader" class="site-loader" aria-hidden="false" aria-label="Loading St. Antony's School website">
+        <div class="site-loader-inner">
+            <div class="site-loader-logo-wrap">
+                <div class="site-loader-ring"></div>
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="St. Antony's Girls Hr. Sec. School" class="site-loader-logo">
+            </div>
+            <p class="site-loader-motto">Walk in Light and Truth</p>
+            <div class="site-loader-bar"><span class="site-loader-bar-fill"></span></div>
+        </div>
+    </div>
+
+    <!-- Header Top Bar -->
+    <div class="header-top">
+        <div class="container header-top-container">
+            <div class="header-contact-info">
+                <span><i class="fa-solid fa-phone"></i> <a href="tel:+919498802477" style="color: inherit;">+91 9498802477</a></span>
+                <span><i class="fa-solid fa-envelope"></i> <a href="mailto:stantony28@gmail.com" style="color: inherit;">stantony28@gmail.com</a></span>
+                <span><i class="fa-solid fa-location-dot"></i> <a href="{{ school_maps_url }}" class="address-map-link" target="_blank" rel="noopener noreferrer">Mandavelipakkam, Chennai</a></span>
+            </div>
+            <div class="header-top-links">
+                <span class="govt-status-tag"><i class="fa-solid fa-certificate"></i> Govt Aided</span>
+                <a href="{{ url_for('admissions') }}#inquiry" title="Admission Inquiry">Admissions Open</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Header -->
+    <header>
+        <div class="nav-container">
+            <a href="{{ url_for('index') }}" class="logo-link" id="logoLink">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="St. Antony's Logo Crest" class="logo-img">
+                <div class="logo-text">
+                    <span class="logo-title">St. Antony's</span>
+                    <span class="logo-subtitle">Girls Hr Sec School <span class="badge-govt-pill">Govt Aided</span></span>
+                </div>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="{{ url_for('index') }}" class="nav-link {% if request.endpoint == 'index' %}active{% endif %}" id="navHome">Home</a>
+                <a href="{{ url_for('about') }}" class="nav-link {% if request.endpoint == 'about' %}active{% endif %}" id="navAbout">About Us</a>
+                <a href="{{ url_for('academics') }}" class="nav-link {% if request.endpoint == 'academics' %}active{% endif %}" id="navAcademics">Academics</a>
+                <a href="{{ url_for('faculty') }}" class="nav-link {% if request.endpoint == 'faculty' %}active{% endif %}" id="navFaculty">Our Faculty</a>
+                <a href="{{ url_for('admissions') }}" class="nav-link {% if request.endpoint == 'admissions' %}active{% endif %}" id="navAdmissions">Admissions</a>
+                <a href="{{ url_for('gallery') }}" class="nav-link {% if request.endpoint == 'gallery' %}active{% endif %}" id="navGallery">Gallery</a>
+                <a href="{{ url_for('contact') }}" class="nav-link {% if request.endpoint == 'contact' %}active{% endif %}" id="navContact">Contact Us</a>
+                <a href="{{ url_for('admissions') }}#inquiry" class="nav-cta" id="navApplyBtn">Apply Now</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay" hidden></div>
+
+    <!-- Main Content Area -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <!-- School Brand Info -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="St. Antony's Logo Crest" class="footer-logo-img">
+                    <h3>St. Antony's<br><span style="font-size: 0.85rem; font-weight: 500; color: var(--color-gold);">Girls Hr Sec School &bull; Govt Aided</span></h3>
+                </div>
+                <p>Empowering young minds through values, excellence, and service. Founded on heritage, dedicated to the growth and development of girls into strong, capable future leaders.</p>
+                <div class="footer-socials">
+                    <a href="https://youtube.com/@stantonystantony-tp7du?si=muv6_IaHH3zAC7xo" class="social-icon" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <div class="footer-links">
+                    <a href="{{ url_for('index') }}" id="footerLinkHome">Home</a>
+                    <a href="{{ url_for('about') }}" id="footerLinkAbout">About School</a>
+                    <a href="{{ url_for('academics') }}" id="footerLinkAcademics">Academics</a>
+                    <a href="{{ url_for('faculty') }}" id="footerLinkFaculty">Faculty Directory</a>
+                    <a href="{{ url_for('gallery') }}" id="footerLinkGallery">Media Gallery</a>
+                    <a href="{{ url_for('contact') }}" id="footerLinkContact">Locate Us</a>
+                </div>
+            </div>
+
+            <!-- Academics & Admissions -->
+            <div class="footer-col">
+                <h4>Academics</h4>
+                <div class="footer-links">
+                    <a href="{{ url_for('academics') }}#secondary">Secondary Section</a>
+                    <a href="{{ url_for('academics') }}#higher-secondary">Higher Secondary Streams</a>
+                    <a href="{{ url_for('academics') }}#co-curricular">Beyond Academics</a>
+                    <a href="{{ url_for('admissions') }}#criteria">Admission Criteria</a>
+                    <a href="{{ url_for('admissions') }}#inquiry">Admission Inquiry</a>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-col">
+                <h4>Contact Details</h4>
+                <ul class="footer-contact-list">
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span><a href="{{ school_maps_url }}" class="address-map-link" target="_blank" rel="noopener noreferrer">{{ school_address_html | safe }}</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span><a href="tel:+919498802477" style="color: inherit;">+91 9498802477</a></span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><a href="mailto:stantony28@gmail.com" style="color: inherit;">stantony28@gmail.com</a></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="container footer-bottom">
+            <p>&copy; 2026 St. Antony's Girls Higher Secondary School, Chennai. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+    <script src="https://elfsightcdn.com/platform.js" async></script>
+    <div class="elfsight-app-998d0b15-6a55-4e2c-b0bb-a47c6cef2ebb" data-elfsight-app-lazy></div>
+
+    <!-- Custom Main JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        (function () {
+            var LOADER_KEY = 'stantony_site_opened';
+            var loader = document.getElementById('siteLoader');
+            var minDisplay = 3000;
+
+            if (document.documentElement.classList.contains('loader-seen') || !loader) {
+                if (loader) loader.remove();
+                return;
+            }
+
+            document.body.classList.add('is-loading');
+            var start = Date.now();
+
+            function finishLoader() {
+                var remaining = Math.max(0, minDisplay - (Date.now() - start));
+                setTimeout(function () {
+                    loader.classList.add('loaded');
+                    document.body.classList.remove('is-loading');
+                    try {
+                        sessionStorage.setItem(LOADER_KEY, 'true');
+                    } catch (e) {}
+                    setTimeout(function () {
+                        loader.remove();
+                    }, 700);
+                }, remaining);
+            }
+
+            if (document.readyState === 'complete') {
+                finishLoader();
+            } else {
+                window.addEventListener('load', finishLoader);
+            }
+        })();
+    </script>
+</body>
+</html>

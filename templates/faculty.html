@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Our Faculty - St. Antony's Girls Hr Sec School (Govt Aided){% endblock %}
+
+{% block meta_description %}Meet the dedicated faculty, educators, and administrative leadership of St. Antony's Girls Higher Secondary School. Nurturing future women leaders with academic brilliance and moral strength.{% endblock %}
+
+{% block content %}
+<!-- Page Hero Banner -->
+<section class="page-banner page-banner-hero" style="background-image: url('{{ url_for('static', filename=page_banners['faculty']) }}');">
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+        <h1>Meet Our Educators</h1>
+        <div class="breadcrumbs">
+            <a href="{{ url_for('index') }}">Home</a>
+            <span class="separator"></span>
+            <span class="current">Faculty Directory</span>
+        </div>
+    </div>
+</section>
+
+<!-- Faculty Section -->
+<section class="section">
+    <div class="container">
+        <div class="section-header slide-up">
+            <h2>Our Faculty & Leadership</h2>
+            <p>Our teachers are experienced, passionate educators dedicated to shaping the values, intelligence, and leadership of every student.</p>
+        </div>
+
+        <div id="facultyDirectory">
+            <div class="faculty-grid">
+                {% for member in faculty_members %}
+                <div class="faculty-card slide-up">
+                    <div class="faculty-image-container">
+                        <img src="{{ url_for('static', filename=member.image) }}" alt="{{ member.name }}" class="faculty-image">
+                    </div>
+                    <div class="faculty-info">
+                        <h3 class="faculty-name">{{ member.name }}</h3>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="section section-cream cta-banner" style="position: relative; overflow: hidden;">
+    <div class="cta-overlay" style="background: rgba(128, 0, 0, 0.03);"></div>
+    <div class="container" style="position: relative; z-index: 5; text-align: center;">
+        <h2 style="color: var(--color-maroon-dark);">Interested in Joining Our Team?</h2>
+        <p style="color: var(--color-gray-dark); max-width: 700px; margin: 0 auto 2rem auto;">We are always looking for passionate, certified educators who are committed to empowering girls through education and leadership.</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-primary" id="btnContactCareers">Submit CV / Contact Us</a>
+    </div>
+</section>
+
+{% endblock %}

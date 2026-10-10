@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - St. Antony's Girls Hr Sec School (Govt Aided){% endblock %}
+
+{% block content %}
+<section class="page-banner page-banner-hero" style="background-image: url('{{ url_for('static', filename=page_banners['about']) }}');">
+    <div class="page-banner-overlay"></div>
+    <div class="container">
+        <h1>About Our School</h1>
+        <div class="breadcrumbs">
+            <a href="{{ url_for('index') }}">Home</a>
+            <span class="separator"></span>
+            <span class="current">About Us</span>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container history-section">
+        <div class="history-image-wrapper slide-up">
+            <img src="{{ url_for('static', filename='images/infra/image.png') }}" alt="St. Antony's Girls Hr Sec School campus facade and main entrance" class="history-img">
+        </div>
+
+        <div class="history-text slide-up delay-2">
+            <span class="principal-title" style="margin-bottom: 0.5rem; display: block;">Est. 1950 &bull; Govt. Aided</span>
+            <h3>A Legacy of Empowerment</h3>
+            <p>St. Antony's Girls Hr Sec School was established in Mandavelipakkam, Chennai, in the year 1950. Founded by the Sisters of the Congregation with a vision to provide quality, accessible education to girls, the school has evolved from a small diocesan learning center into a premier government-aided higher secondary institution in Tamil Nadu.</p>
+            <p>Over the last seven decades, we have remained deeply committed to breaking educational barriers for young women. We provide a space where girls are encouraged to raise their voices, ask critical questions, and pursue academic excellence across disciplines.</p>
+            <p>Our school logo crest represents the triple anchor of our educational philosophy: the open book representing academic illumination, the lamp of knowledge representing inner spiritual guidance, and the lily representing purity, humility, and moral strength. Driven by our motto, <em>"Walk in Light and Truth"</em>, we prepare our girls to leave the campus as beacons of hope and integrity for the society.</p>
+        </div>
+    </div>
+</section>
+
+<section id="vision-mission" class="section section-cream">
+    <div class="container">
+        <div class="vision-mission-grid">
+            <div class="vision-card slide-up">
+                <div class="vision-icon"><i class="fa-solid fa-eye"></i></div>
+                <h3>Our Vision</h3>
+                <p>To be a premier institution of holistic learning that nurtures self-reliant, ethical, and intellectually vibrant young women who will contribute meaningfully to the betterment of families, communities, and the global society.</p>
+            </div>
+
+            <div class="mission-card slide-up delay-2">
+                <div class="mission-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Our Mission</h3>
+                <p>To provide a supportive and challenging learning environment that blends academic rigor with moral integrity. We strive to cultivate leadership skills, spiritual values, scientific thinking, and a sense of social responsibility in every student.</p>
+            </div>
+        </div>
+
+        <div class="values-list">
+            <div class="value-item slide-up delay-1">
+                <div class="value-icon"><i class="fa-solid fa-heart"></i></div>
+                <h4>Moral Integrity</h4>
+                <p>Instilling truthfulness, honesty, and transparency in actions and choices.</p>
+            </div>
+            <div class="value-item slide-up delay-2">
+                <div class="value-icon"><i class="fa-solid fa-award"></i></div>
+                <h4>Pursuit of Excellence</h4>
+                <p>Striving for the highest standards in academics, arts, sports, and life skills.</p>
+            </div>
+            <div class="value-item slide-up delay-3">
+                <div class="value-icon"><i class="fa-solid fa-hands-holding"></i></div>
+                <h4>Service & Compassion</h4>
+                <p>Nurturing respect for all, empathy for the weak, and a readiness to serve.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
